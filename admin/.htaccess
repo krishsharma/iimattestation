@@ -1,0 +1,26 @@
+#To disable directory listing:
+#A user can view a list of all files from this directory possibly 
+#exposing sensitive information. An attacker can see the
+#files located in the directory and could potentially access files 
+#which disclose sensitive information
+#----------------------------------------------
+IndexIgnore *
+
+#----------------------------------------------
+#To enable clickjacking method:
+#This technique allows the attacker to circumvent defenses against cross-site request forgery, and may result in
+#unauthorized actions
+#----------------------------------------------
+Header always append X-Frame-Options DENY
+#----------------------------------------------
+
+#----------------------------------------------
+#Below are the code to disable cross site tracing:
+#An attacker might utilize the Trace method to perform Cross-site Scripting on the web server to grab the cookie
+#information to hijack the session.
+#----------------------------------------------
+RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+RewriteRule .* - [F]
+#----------------------------------------------
+php_value session.cookie_httponly 1
+php_value session.cookie_secure 1
