@@ -1,7 +1,30 @@
+body {
+    font-family: Calibri;
+}
 .auth-error {
     color: #FF5252;
 }
 .nav-breadcrumb {
     margin-top: 6px;
     padding-left: 10px;
+}
+.popup {
+    width: 340px;
+    position: absolute;
+    right: 0;
+    top: 150px;
+    padding: 2px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    text-indent: 20px;
+    display: none;
+}
+.msg-succ {
+    background: #228B22;
+}
+.msg-err {
+    background: #ee6e73;
+}
+.img-border {
+    background: #708090;
 }

@@ -6,8 +6,8 @@ require_once './config/base.php';
 $_SESSION['basepath'] = _BASEPATH_;
 $_SESSION['baseurl'] = _BASEURL_;
 
-require_once('classes/userClass.php');
-require_once('config/db.php');
+require_once('./classes/userClass.php');
+require_once('./config/db.php');
 
 $db = new db_connection();
 $link = $db->createConnection();

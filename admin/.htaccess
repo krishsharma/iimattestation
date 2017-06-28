@@ -22,5 +22,5 @@ Header always append X-Frame-Options DENY
 RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
 RewriteRule .* - [F]
 #----------------------------------------------
-php_value session.cookie_httponly 1
-php_value session.cookie_secure 1
+#php_value session.cookie_httponly 1
+#php_value session.cookie_secure 1
