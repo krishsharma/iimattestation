@@ -1,0 +1,30 @@
+<ul id="global" class="dropdown-content">
+  <li><a routerLink="company-details">Company Details</a></li>
+  <li class="divider"></li>
+  <li><a href="#">Testimonials Section</a></li>
+  <li class="divider"></li>
+  <li><a href="#">Footer Section</a></li>
+</ul>
+<nav class="green lighten-1">
+  <div class="nav-wrapper">
+    <a routerLink="login" class="brand-logo">
+            <img src="http://localhost:8060/iimattestation/images/logo.png">
+        </a>
+    <ul class="right hide-on-med-and-down">
+      <li *ngIf="_localStorage.isLoggedIn()"><a href="#">Home</a></li>
+      <li *ngIf="_localStorage.isLoggedIn()"><a href="#">About</a></li>
+      <li *ngIf="_localStorage.isLoggedIn()"><a href="#">Profile</a></li>
+      <li *ngIf="_localStorage.isLoggedIn()"><a href="#">Apostille</a></li>
+      <li *ngIf="_localStorage.isLoggedIn()"><a href="#">Attestation</a></li>
+      <li *ngIf="_localStorage.isLoggedIn()"><a href="#">Services</a></li>
+      <li *ngIf="_localStorage.isLoggedIn()"><a href="#">Contact</a></li>
+      <!-- Dropdown Trigger -->
+      <li *ngIf="_localStorage.isLoggedIn()"><a class="dropdown-button" href="#" data-activates="global">Common Section<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li *ngIf="_localStorage.isLoggedIn()"><a href="#" (click)="logout()">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+<footer class="footer center">
+  <p>© 2017 IIMS Attestation Services. All Rights Reserved</p>
+</footer>

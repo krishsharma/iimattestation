@@ -1,0 +1,25 @@
+<div class="section no-pad-bot" id="index-banner">
+  <div class="container">
+    <h3 class="center">
+      IIMS Attestation Services Authentication</h3>
+    <form class="col s12 card-panel" (submit)="login()" autocomplete="off">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="username" type="text" class="validate" name="username" [(ngModel)]="username">
+          <label for="username">Username</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate" name="password" [(ngModel)]="password">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row center">
+        <button class="btn waves-effect waves-light" name="action">Login
+                            <i class="material-icons right">send</i>
+                        </button>
+      </div>
+    </form>
+  </div>
+</div>

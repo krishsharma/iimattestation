@@ -5,12 +5,17 @@ require_once($_SESSION['basepath'] . 'config/db.php');
 
 class companyModel extends db_connection {
 
-    protected function getData() {
+    private $link = null;
+
+    public function __construct() {
         $db = new db_connection();
-        $link = $db->createConnection();
-        mysql_selectdb(_DBNAME_, $link);
+        $this->link = $db->createConnection();
+        mysql_selectdb(_DBNAME_, $this->link);
+    }
+
+    protected function getData() {
         $query = "SELECT * FROM " . TABLE_COMPANY;
-        $result = mysql_query($query, $link);
+        $result = mysql_query($query, $this->link);
         if (mysql_num_rows($result) > 0) {
             $data = mysql_fetch_array($result);
         } else {
@@ -19,12 +24,9 @@ class companyModel extends db_connection {
         return $data;
     }
 
-    protected function saveData($name, $website, $logoPath) {
-        $db = new db_connection();
-        $link = $db->createConnection();
-        mysql_selectdb(_DBNAME_, $link);
+    protected function saveData($name, $website) {
         $findQuery = "SELECT * FROM " . TABLE_COMPANY;
-        $result = mysql_query($findQuery, $link);
+        $result = mysql_query($findQuery, $this->link);
         if (mysql_num_rows($result) > 0) {
             if ($logoPath != NULL) {
                 $query = "UPDATE " . TABLE_COMPANY
@@ -39,7 +41,7 @@ class companyModel extends db_connection {
                     . " VALUES('{$name}','{$website}','{$logoPath}')";
         }
 
-        $status = mysql_query($query, $link);
+        $status = mysql_query($query, $this->link);
         if ($status) {
             return TRUE;
         } else {

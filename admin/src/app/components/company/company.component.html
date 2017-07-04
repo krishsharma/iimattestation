@@ -1,0 +1,31 @@
+<div class="container">
+  <nav class="nav-breadcrumb">
+    <div class="nav-wrapper">
+      <div class="col s12">
+        <a href="#!" class="breadcrumb">Common Section</a>
+        <a routerLink="company-details" class="breadcrumb">Company Details</a>
+      </div>
+    </div>
+  </nav>
+  <form (submit)="onSubmit()" class="col s12 card-panel" autocomplete="off" enctype="multipart/form-data">
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="company-name" type="text" class="validate" name="company-name" [(ngModel)]="companyName">
+        <label for="company-name" [class.active]="companyName">Enter Company Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="company-website" type="text" class="validate" name="company-website" [(ngModel)]="companyWebsite">
+        <label for="company-website" [class.active]="companyWebsite">Enter Company Website (eg: www.example.com)</label>
+      </div>
+    </div>
+    <div class="row center">
+      <div class="input-field col s12">
+        <button class="btn waves-effect waves-light" type="submit" name="company-details">Save
+                    <i class="material-icons left">save</i>
+                </button>
+      </div>
+    </div>
+  </form>
+</div>
